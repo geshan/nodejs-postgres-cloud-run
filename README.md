@@ -9,5 +9,6 @@ A demo Quotes REST API using Node.js and PostgreSQL. Built with Express Js for t
 
 ## How it works
 
-Hit the `URL/quotes` to get some great programming quotes:
+Hit the `URL/quotes` to get some great programming quotes like below:
 
+![Quotes API Working](/images/quotes.jpg)

@@ -5,3 +5,9 @@ A demo Quotes REST API using Node.js and PostgreSQL. Built with Express Js for t
 ## Deploy on Google Cloud Run
 
 [![Run on Google Cloud](https://deploy.cloud.run/button.svg)](https://deploy.cloud.run)
+
+
+## How it works
+
+Hit the `URL/quotes` to get some great programming quotes:
+

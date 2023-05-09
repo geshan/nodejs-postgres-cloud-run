@@ -12,3 +12,7 @@ A demo Quotes REST API using Node.js and PostgreSQL. Built with Express Js for t
 Hit the `URL/quotes` to get some great programming quotes like below:
 
 ![Quotes API Working](/images/quotes.jpg)
+
+## Deploy using Cloud Build
+
+There is a Cloudbuild.yml file in the repository, if you want to setup a deployment pipeline with Cloud Build you can follow the [official guide](https://cloud.google.com/build/docs/deploying-builds/deploy-cloud-run).

@@ -17,3 +17,5 @@ steps:
     args: ['run', 'deploy', 'nodejs-postgres', '--image', 'us-central1-docker.pkg.dev/$PROJECT_ID/nodejs-postgres', '--region', 'us-central1', '--platform', 'managed', '--allow-unauthenticated', '--cpu-boost']
 images:
 - us-central1-docker.pkg.dev/$PROJECT_ID/$PROJECT_ID/nodejs-postgres
+options:
+  logging: CLOUD_LOGGING_ONLY

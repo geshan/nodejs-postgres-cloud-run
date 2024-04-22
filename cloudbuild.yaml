@@ -2,18 +2,20 @@ steps:
   - name: gcr.io/cloud-builders/docker
     args: [
             'build', 
-            '-t', 'gcr.io/$PROJECT_ID/nodejs-postgres:${SHORT_SHA}', 
-            '-t', 'gcr.io/$PROJECT_ID/nodejs-postgres:${BRANCH_NAME}', 
-            '-t', 'gcr.io/$PROJECT_ID/nodejs-postgres:latest', 
+            '-t', 'us-central1-docker.pkg.dev/$PROJECT_ID/nodejs-postgres:${SHORT_SHA}', 
+            '-t', 'us-central1-docker.pkg.dev/$PROJECT_ID/nodejs-postgres:${BRANCH_NAME}', 
+            '-t', 'us-central1-docker.pkg.dev/$PROJECT_ID/nodejs-postgres:latest', 
             '--build-arg', 'COMMIT_SHA=${SHORT_SHA}', '--build-arg', 'BRANCH_NAME=${BRANCH_NAME}', '.']
   
   - name: 'gcr.io/cloud-builders/docker'
-    args: ["push", "gcr.io/$PROJECT_ID/nodejs-postgres"]
+    args: ["push", "us-central1-docker.pkg.dev/$PROJECT_ID/nodejs-postgres"]
     
   - name: 'gcr.io/cloud-builders/docker'
-    args: ["push", "-a", "gcr.io/$PROJECT_ID/nodejs-postgres"]
+    args: ["push", "-a", "us-central1-docker.pkg.dev/$PROJECT_ID/nodejs-postgres"]
   
   - name: 'gcr.io/cloud-builders/gcloud'
-    args: ['run', 'deploy', 'nodejs-postgres', '--image', 'gcr.io/$PROJECT_ID/nodejs-postgres', '--region', 'us-central1', '--platform', 'managed', '--allow-unauthenticated', '--cpu-boost']
+    args: ['run', 'deploy', 'nodejs-postgres', '--image', 'us-central1-docker.pkg.dev/$PROJECT_ID/nodejs-postgres', '--region', 'us-central1', '--platform', 'managed', '--allow-unauthenticated', '--cpu-boost']
 options:
   logging: CLOUD_LOGGING_ONLY
+images:
+- us-central1-docker.pkg.dev/$PROJECT_ID/$PROJECT_ID/nodejs-postgres

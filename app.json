@@ -3,7 +3,7 @@
     "hooks": {
         "prebuild": {
             "commands": [
-                "gcloud auth configure-docker --quite"
+                "gcloud auth configure-docker --quiet"
             ]
         }
     }
